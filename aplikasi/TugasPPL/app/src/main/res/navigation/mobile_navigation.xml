@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_history">
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.tugasppl.ui.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="com.example.tugasppl.ui.ListPembayaranKas.ListPembayaranKasFragment"
+        android:label="@string/menu_list"
+        tools:layout="@layout/fragment_list_pembayaran_kas" />
+
+    <fragment
+        android:id="@+id/nav_uang_masuk_keluar"
+        android:name="com.example.tugasppl.ui.uang.UangFragment"
+        android:label="@string/menu_uang_masuk_keluar"
+        tools:layout="@layout/fragment_uang_masuk_keluar" />
+
+    <fragment
+        android:id="@+id/nav_rapat"
+        android:name="com.example.tugasppl.ui.rapat.RapatFragment"
+        android:label="@string/menu_rapat"
+        tools:layout="@layout/fragment_rapat" />
+
+    <fragment
+        android:id="@+id/nav_evaluasi"
+        android:name="com.example.tugasppl.ui.evaluasi.EvaluasiFragment"
+        android:label="@string/menu_evaluasi"
+        tools:layout="@layout/fragment_evaluasi" />
+
+    <fragment
+        android:id="@+id/nav_surat"
+        android:name="com.example.tugasppl.ui.surat.SuratFragment"
+        android:label="@string/menu_surat"
+        tools:layout="@layout/fragment_surat" />
+
+    <fragment
+        android:id="@+id/nav_inventaris"
+        android:name="com.example.tugasppl.ui.inventaris.InventarisFragment"
+        android:label="@string/menu_inventaris"
+        tools:layout="@layout/fragment_inventaris" />
+</navigation>
