@@ -16,6 +16,20 @@
     <string name="menu_inventaris">Inventaris</string>
     <string name="menu_logout">Logout</string>
 
+    <string name="open_navigation_drawer">Open Navigation Drawer</string>
+    <string name="close_navigation_drawer">Close Navigation Drawer</string>
+
+    <string-array name="spinner_surat">
+        <item>Semua Surat</item>
+        <item>Surat Masuk</item>
+        <item>Surat Keluar</item>
+    </string-array>
+    <string-array name="spinner_surat_id">
+        <item>2</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.tugasppl;
+package com.example.tugasppl.fragment;
 
 
 import android.os.Bundle;
@@ -21,8 +21,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tugasppl.Model.Event;
+import com.example.tugasppl.R;
 import com.example.tugasppl.adapter.HomeAdapter;
-import com.example.tugasppl.adapter.UKMKuAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,16 +36,16 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UKMKuFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ArrayList<Event> dataEvent;
-    private UKMKuAdapter ukmKuAdapter;
+    private HomeAdapter homeAdapter;
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
-    private String url = "http://192.168.43.99/ServiceTugasPPL.php";
+    private String url = "http://192.168.43.47/ServiceTugasPPL.php";
 
-    public UKMKuFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -53,13 +53,12 @@ public class UKMKuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_ukmku, container, false);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
         init(root);
 
         getData(dataEvent);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(ukmKuAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(homeAdapter);
         return root;
     }
 
@@ -70,25 +69,27 @@ public class UKMKuFragment extends Fragment {
                 try {
                     JSONArray jsonArray = new JSONArray(response);
                     for (int i=0; i<jsonArray.length();i++){
-                        Event event = new Event(jsonArray.getString(i));
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        Event event = new Event(jsonObject.getString("id"), jsonObject.getString("id_ukm"), jsonObject.getString("nama_event"), jsonObject.getString("nama_ukm"),
+                                jsonObject.getString("thumbnail"), jsonObject.getString("tanggal"), jsonObject.getString("deskripsi"));
                         dataEvent.add(event);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                ukmKuAdapter.notifyDataSetChanged();
+                homeAdapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(),"Gagal terhubung ke server",Toast.LENGTH_SHORT).show();
-                Log.d("Log dari "+UKMKuAdapter.class.getSimpleName(),error.toString());
+                Log.d("Log dari "+HomeFragment.class.getSimpleName(),error.toString());
             }
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                map.put("flag","get_ukm");
+                map.put("flag","get_all_event");
                 return map;
             }
         };
@@ -96,10 +97,10 @@ public class UKMKuFragment extends Fragment {
     }
 
     private void init(View root) {
-        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewUkmku);
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewHome);
         dataEvent= new ArrayList<>();
-        ukmKuAdapter = new UKMKuAdapter(getContext(), dataEvent);
-        requestQueue = Volley.newRequestQueue(getContext());
+        homeAdapter = new HomeAdapter(getActivity(), dataEvent);
+        requestQueue = Volley.newRequestQueue(getActivity());
     }
 
 }

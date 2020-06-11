@@ -1,4 +1,4 @@
-package com.example.tugasppl.ui.history;
+package com.example.tugasppl.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,20 +16,9 @@ import com.example.tugasppl.R;
 
 public class HistoryFragment extends Fragment {
 
-    private HistoryViewModel historyViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        historyViewModel =
-                ViewModelProviders.of(this).get(HistoryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_history, container, false);
-        final TextView textView = root.findViewById(R.id.text_history);
-        historyViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        return inflater.inflate(R.layout.fragment_history, container, false);
     }
 }
