@@ -5,7 +5,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Home Event"));
         tabLayout.addTab(tabLayout.newTab().setText("UKM Ku"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        SharedPreferences preferences = getSharedPreferences("pref",MODE_PRIVATE);
+        Log.d("id_ukm",preferences.getString("id_ukm","0"));
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.main_pager);
         MainPagerAdapter pagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());

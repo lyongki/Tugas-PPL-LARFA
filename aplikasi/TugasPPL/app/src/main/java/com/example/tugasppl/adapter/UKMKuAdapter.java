@@ -70,7 +70,7 @@ public class UKMKuAdapter extends RecyclerView.Adapter<UKMKuAdapter.ViewHolder> 
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, UKMEventActivity.class);
-                    intent.putExtra("nama_ukm",dataEvent.get(getAdapterPosition()).getNama_ukm());
+                    intent.putExtra("id_ukm",dataEvent.get(getAdapterPosition()).getId_ukm());
                     context.startActivity(intent);
                 }
             });

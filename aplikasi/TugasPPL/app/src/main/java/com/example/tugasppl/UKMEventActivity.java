@@ -35,7 +35,7 @@ public class UKMEventActivity extends AppCompatActivity {
     private ArrayList<Event> dataEvent;
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
-    private String url = "http://192.168.43.99/ServiceTugasPPL.php";
+    private String url = "http://192.168.43.47/ServiceTugasPPL.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class UKMEventActivity extends AppCompatActivity {
                     JSONArray jsonArray = new JSONArray(response);
                     for (int i=0; i<jsonArray.length();i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        Event event = new Event(jsonObject.getString("id"), jsonObject.getString("nama_event"), jsonObject.getString("nama_ukm"),
+                        Event event = new Event(jsonObject.getString("id"), jsonObject.getString("id_ukm"), jsonObject.getString("nama_event"), jsonObject.getString("nama_ukm"),
                                 jsonObject.getString("thumbnail"), jsonObject.getString("tanggal"), jsonObject.getString("deskripsi"));
                         dataEvent.add(event);
                         ukmEventAdapter.notifyDataSetChanged();
@@ -77,7 +77,7 @@ public class UKMEventActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
                 map.put("flag","get_ukm_all_event");
-                map.put("nama_ukm",getIntent().getStringExtra("nama_ukm"));
+                map.put("id_ukm",getIntent().getStringExtra("id_ukm"));
                 return map;
             }
         };

@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.tugasppl.HomeFragment;
-import com.example.tugasppl.UKMKuFragment;
+import com.example.tugasppl.fragment.HomeFragment;
+import com.example.tugasppl.fragment.UKMKuFragment;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
 

@@ -1,4 +1,4 @@
-package com.example.tugasppl.ui.rapat;
+package com.example.tugasppl.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,20 +16,15 @@ import com.example.tugasppl.R;
 
 public class RapatFragment extends Fragment {
 
-    private RapatViewModel rapatViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        rapatViewModel =
-                ViewModelProviders.of(this).get(RapatViewModel.class);
         View root = inflater.inflate(R.layout.fragment_rapat, container, false);
-        final TextView textView = root.findViewById(R.id.text_rapat);
-        rapatViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        init(root);
+
         return root;
+    }
+
+    private void init(View root) {
+
     }
 }

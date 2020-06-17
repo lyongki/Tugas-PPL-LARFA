@@ -3,10 +3,11 @@ package com.example.tugasppl.Model;
 import java.io.Serializable;
 
 public class Event implements Serializable {
-    private String id,nama_event,nama_ukm,thumbnail,tanggal,evaluasi,deskripsi;
+    private String id,id_ukm,nama_event,nama_ukm,thumbnail,tanggal,evaluasi,deskripsi;
 
-    public Event(String id, String nama_event, String nama_ukm, String thumbnail, String tanggal, String evaluasi, String deskripsi) {
+    public Event(String id, String id_ukm, String nama_event, String nama_ukm, String thumbnail, String tanggal, String evaluasi, String deskripsi) {
         this.id = id;
+        this.id_ukm = id_ukm;
         this.nama_event = nama_event;
         this.nama_ukm = nama_ukm;
         this.thumbnail = thumbnail;
@@ -15,8 +16,9 @@ public class Event implements Serializable {
         this.deskripsi = deskripsi;
     }
 
-    public Event(String id, String nama_event, String nama_ukm, String thumbnail, String tanggal, String deskripsi) {
+    public Event(String id, String id_ukm, String nama_event, String nama_ukm, String thumbnail, String tanggal, String deskripsi) {
         this.id = id;
+        this.id_ukm = id_ukm;
         this.nama_event = nama_event;
         this.nama_ukm = nama_ukm;
         this.thumbnail = thumbnail;
@@ -24,8 +26,17 @@ public class Event implements Serializable {
         this.deskripsi = deskripsi;
     }
 
-    public Event(String nama_ukm) {
+    public Event(String id_ukm, String nama_ukm) {
+        this.id_ukm = id_ukm;
         this.nama_ukm = nama_ukm;
+    }
+
+    public String getId_ukm() {
+        return id_ukm;
+    }
+
+    public void setId_ukm(String id_ukm) {
+        this.id_ukm = id_ukm;
     }
 
     public String getTanggal() {
