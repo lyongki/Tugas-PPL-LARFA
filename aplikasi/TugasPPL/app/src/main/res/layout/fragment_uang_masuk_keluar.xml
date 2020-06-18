@@ -1,28 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_margin="16dp">
 
-    <TextView
-        android:id="@+id/text_uang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"/>
     <Spinner
         android:layout_width="200dp"
         android:id="@+id/spinerr_uang"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
-    <TextView
+        android:spinnerMode="dropdown"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/layoutUangSaldo"/>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="input uang masuk atau keluar"
-        android:gravity="center_vertical|center_horizontal"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutUangSaldo"
+        android:layout_above="@id/textViewUangJumlah"
+        android:layout_marginBottom="25dp"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo"
+            android:layout_marginRight="43dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:id="@+id/textViewUangSaldo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Banyak Saldo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:id="@+id/textViewUangNilaiSaldo"
+            android:layout_toRightOf="@id/textViewUangSaldo"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewUangKeterangan"
+        android:text="Jumlah"
+        android:layout_marginBottom="26dp"
+        android:layout_marginRight="29dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:id="@+id/textViewUangJumlah"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/editTextUangJumlah"
+        android:layout_above="@+id/textViewUangKeterangan"
+        android:layout_toRightOf="@+id/textViewUangJumlah"
+        android:hint="Masukan jumlah uang"
+        android:inputType="numberSigned"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keterangan"
+        android:id="@+id/textViewUangKeterangan"
+        android:layout_centerVertical="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroupUang"
+        android:visibility="visible"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/textViewUangKeterangan">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kas"
+            android:id="@+id/radioButtonUangKas"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:id="@+id/radioButtonUangOther"/>
+    </RadioGroup>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutRadioGrup"
+        android:layout_below="@id/textViewUangKeterangan"
+        android:layout_marginTop="20dp"
+        android:visibility="visible">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextUangKeterangan"
+            android:layout_marginLeft="85dp"
+            android:background="@drawable/border"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:hint="Masukan Keterangan"
+            android:lines="6"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:scrollHorizontally="false"
+            style="@style/Widget.AppCompat.EditText"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="40dp"
+            android:visibility="visible"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:id="@+id/textViewUangNama"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:visibility="visible"
+            android:id="@+id/editTextUangNama"
+            android:layout_toRightOf="@+id/textViewUangNama"
+            android:hint="Masukan Nama" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIM"
+            android:layout_below="@id/textViewUangNama"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="53dp"
+            android:visibility="visible"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:id="@+id/textViewUangNIM"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:visibility="visible"
+            android:layout_below="@id/textViewUangNama"
+            android:id="@+id/editTextUangNIM"
+            android:layout_toRightOf="@+id/textViewUangNIM"
+            android:hint="Masukan NIM" />
+    </RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Simpan"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/layoutRadioGrup"
+        android:id="@+id/buttonUangSimpan"/>
+</RelativeLayout>

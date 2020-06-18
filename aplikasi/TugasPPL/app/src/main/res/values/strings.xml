@@ -30,6 +30,27 @@
         <item>1</item>
     </string-array>
 
+    <string-array name="spinner_inventaris">
+        <item>Daftar Inventaris</item>
+        <item>Inventaris Tersedia</item>
+        <item>Inventaris Dipinjam</item>
+    </string-array>
+    <string-array name="spinner_inventaris_id">
+        <item>2</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="spinner_uang">
+        <item>Uang Masuk</item>
+        <item>Uang Keluar</item>
+    </string-array>
+    <string-array name="spinner_uang_id">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

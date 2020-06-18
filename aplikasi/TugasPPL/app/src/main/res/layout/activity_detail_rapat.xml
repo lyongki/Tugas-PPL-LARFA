@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailRapatActivity"
+    android:layout_margin="10dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tanggal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:layout_alignParentRight="true"
+        android:id="@+id/textViewDetailRapatTanggal"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nama Rapat"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_below="@id/textViewDetailRapatTanggal"
+        android:id="@+id/textViewDetailRapatNama"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="deskripsi"
+        android:layout_below="@id/textViewDetailRapatNama"
+        android:id="@+id/textViewDetailRapatDeskripsi"
+        android:layout_margin="10dp"/>
+
+
+</RelativeLayout>

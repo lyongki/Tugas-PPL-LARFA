@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editTextSuratSearch"
+            android:id="@+id/editTextRapatSearch"
             android:layout_width="250dp"
             android:hint="Masukan nama rapat"
             android:layout_height="wrap_content"

@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                                     preferences.edit().putString("id_pengurus",jsonObject.getString("id")).apply();
                                     preferences.edit().putString("id_ukm",jsonObject.getString("id_ukm")).apply();
+                                    preferences.edit().putString("nama",jsonObject.getString("nama")).apply();
                                     Log.d("id_ukm login",preferences.getString("id_ukm","-1"));
                                     startActivity(intent);
                                 }else

@@ -34,10 +34,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
+    private View header;
+    private TextView pengurus;
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
@@ -63,6 +66,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new HistoryFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_history);
         }
+
+        pengurus.setText(preferences.getString("nama","pengurus"));
     }
 
     @Override
@@ -84,6 +89,9 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         toolbar = findViewById(R.id.toolbar);
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+        header = navigationView.getHeaderView(0);
+        pengurus = header.findViewById(R.id.textViewDashboardPengurus);
+        preferences = getSharedPreferences("pref",MODE_PRIVATE);
         toggle = new ActionBarDrawerToggle(this, drawer, R.string.open_navigation_drawer, R.string.close_navigation_drawer);
     }
 

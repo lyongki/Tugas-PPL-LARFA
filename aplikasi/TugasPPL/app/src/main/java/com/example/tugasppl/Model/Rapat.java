@@ -1,6 +1,8 @@
 package com.example.tugasppl.Model;
 
-public class Rapat {
+import java.io.Serializable;
+
+public class Rapat implements Serializable {
     private String nama, tanggal, hasil;
 
     public Rapat(String nama, String tanggal, String hasil) {

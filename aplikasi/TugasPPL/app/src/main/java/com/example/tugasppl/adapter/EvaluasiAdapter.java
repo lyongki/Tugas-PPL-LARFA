@@ -5,73 +5,76 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.tugasppl.DetailEventActivity;
-import com.example.tugasppl.Model.Rapat;
+import com.example.tugasppl.Model.Event;
 import com.example.tugasppl.R;
 
 import java.util.ArrayList;
 
-public class RapatAdapter extends RecyclerView.Adapter<RapatAdapter.ViewHolder> {
-
+public class EvaluasiAdapter extends RecyclerView.Adapter<EvaluasiAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<Rapat> dataRapat;
+    private ArrayList<Event> dataEvent;
 
-    public RapatAdapter(Context context, ArrayList<Rapat> dataRapat) {
+    public EvaluasiAdapter(Context context, ArrayList<Event> dataEvent) {
         this.context = context;
-        this.dataRapat = dataRapat;
+        this.dataEvent = dataEvent;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_rapat, parent, false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_evaluasi, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Rapat current = dataRapat.get(position);
+        Event current = dataEvent.get(position);
         holder.bindTo(current);
     }
 
     @Override
     public int getItemCount() {
-        return dataRapat.size();
+        return dataEvent.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nama, tanggal;
-        private CardView cardView;
+        private ImageView thumbnail;
+        private TextView nama_event, tanggal;
+        private CardView event;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             init(itemView);
-
-            cardView.setOnClickListener(new View.OnClickListener() {
+            event.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, DetailEventActivity.class);
-                    intent.putExtra("DATA",dataRapat.get(getAdapterPosition()));
+                    intent.putExtra("DATA",dataEvent.get(getAdapterPosition()));
                     context.startActivity(intent);
                 }
             });
         }
 
         private void init(View itemView) {
-            nama = itemView.findViewById(R.id.textViewRapatJudul);
-            tanggal = itemView.findViewById(R.id.textViewRapatTanggal);
-            cardView = itemView.findViewById(R.id.cardViewRapat);
+            thumbnail = (ImageView) itemView.findViewById(R.id.imageViewEvaluasiThumbnail);
+            nama_event = (TextView) itemView.findViewById(R.id.textViewEvaluasiNamaEvent);
+            tanggal = (TextView) itemView.findViewById(R.id.textViewEvaluasiTanggal);
+            event = (CardView) itemView.findViewById(R.id.cardViewEvaluasi);
         }
 
-        public void bindTo(Rapat current) {
-            nama.setText(current.getNama());
+        public void bindTo(Event current) {
+            nama_event.setText(current.getNama_event());
             tanggal.setText(current.getTanggal());
+            Glide.with(context).load(current.getThumbnail()).into(thumbnail);
         }
     }
 }

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -81,6 +82,8 @@ public class SuratFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getData(dataSurat, tipe, text, 1);
+                InputMethodManager manager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                manager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
             }
         });
 
@@ -93,7 +96,7 @@ public class SuratFragment extends Fragment {
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.d("response",response);
+                dataSurat.clear();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
                     if(jsonArray.length() == 0){
@@ -101,7 +104,7 @@ public class SuratFragment extends Fragment {
                         recyclerView.setAdapter(emptyAdapter);
                         emptyAdapter.notifyDataSetChanged();
                     }else {
-                        dataSurat.clear();
+
                         for(int i = 0; i< jsonArray.length();i++){
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             Surat surat = new Surat(jsonObject.getString("id"), jsonObject.getString("nama"), jsonObject.getString("tanggal"), jsonObject.getString("role"), jsonObject.getString("file"));

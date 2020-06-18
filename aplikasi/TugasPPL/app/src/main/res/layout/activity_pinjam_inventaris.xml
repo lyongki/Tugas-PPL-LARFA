@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PinjamInventarisActivity"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/textViewInventarisSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textViewInventarisJumlahTersedia"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="25dp"
+        android:text="Inventaris"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown"
+        android:layout_marginBottom="15dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:id="@+id/spinerr_inventaris_pinjam"
+        android:layout_toRightOf="@id/textViewInventarisSpinner"
+        android:layout_above="@id/textViewInventarisJumlahTersedia"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah Tersedia"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:id="@+id/textViewInventarisJumlahTersedia"
+        android:layout_marginRight="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banyak Jumlah"
+        android:textSize="20sp"
+        android:id="@+id/textViewInventarisNilaiJumlahTersedia"
+        android:layout_toRightOf="@id/textViewInventarisJumlahTersedia"
+        android:layout_below="@id/spinerr_inventaris_pinjam"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah Pinjam"
+        android:textSize="20sp"
+        android:id="@+id/textViewInventarisJumlahPinjam"
+        android:layout_below="@+id/textViewInventarisJumlahTersedia"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:layout_marginTop="15dp"
+        android:inputType="numberSigned"
+        android:id="@+id/editTextInventarisJumlahPinjam"
+        android:layout_toRightOf="@id/textViewInventarisJumlahPinjam"
+        android:layout_below="@id/textViewInventarisNilaiJumlahTersedia"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pinjam"
+        android:id="@+id/buttonInventarisPinjam"
+        android:layout_below="@id/textViewInventarisJumlahPinjam"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

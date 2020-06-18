@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class DetailEventActivity extends AppCompatActivity {
 
     private TextView nama_event, nama_ukm, tanggal, deskripsi;
+    private LinearLayout layout;
     private ImageView thumbnail;
     private Event dataEvent;
 
@@ -32,6 +34,16 @@ public class DetailEventActivity extends AppCompatActivity {
         tanggal.setText(dataEvent.getTanggal());
         deskripsi.setText(dataEvent.getDeskripsi());
         Glide.with(this).load(dataEvent.getThumbnail()).into(thumbnail);
+        if(dataEvent.getEvaluasi() != null){
+            TextView tvEvaluasi, tvHasil;
+            tvEvaluasi = new TextView(this);
+            tvHasil = new TextView(this);
+            tvEvaluasi.setText("Evaluasi :");
+            tvEvaluasi.setTextAppearance(R.style.TextAppearance_AppCompat_Title);
+            tvHasil.setText(dataEvent.getEvaluasi());
+            layout.addView(tvEvaluasi);
+            layout.addView(tvHasil);
+        }
     }
 
     private void init() {
@@ -40,6 +52,7 @@ public class DetailEventActivity extends AppCompatActivity {
         tanggal = (TextView) findViewById(R.id.textViewDetailEventTanggal);
         deskripsi = (TextView) findViewById(R.id.textViewDetailEventDeskripsi);
         thumbnail = (ImageView) findViewById(R.id.imageViewDetailEventThumbnail);
+        layout = findViewById(R.id.layoutEvaluasi);
         dataEvent = (Event) getIntent().getSerializableExtra("DATA");
     }
 }

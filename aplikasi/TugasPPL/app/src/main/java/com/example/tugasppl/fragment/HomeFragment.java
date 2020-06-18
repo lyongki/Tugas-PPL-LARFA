@@ -40,10 +40,10 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ArrayList<Event> dataEvent;
-    private HomeAdapter homeAdapter;
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
     private String url = "http://192.168.43.47/ServiceTugasPPL.php";
+    private HomeAdapter homeAdapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -99,8 +99,8 @@ public class HomeFragment extends Fragment {
     private void init(View root) {
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewHome);
         dataEvent= new ArrayList<>();
-        homeAdapter = new HomeAdapter(getActivity(), dataEvent);
         requestQueue = Volley.newRequestQueue(getActivity());
+        homeAdapter = new HomeAdapter(getActivity(), dataEvent);
     }
 
 }
