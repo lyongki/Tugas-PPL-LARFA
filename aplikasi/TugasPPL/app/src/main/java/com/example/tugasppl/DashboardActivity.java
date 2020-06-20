@@ -35,6 +35,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -123,7 +124,11 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 closeDrawer();
                 break;
             case R.id.nav_uang_masuk_keluar:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new UangFragment()).commit();
+                if(preferences.getString("role","").matches("3") ||
+                        preferences.getString("role","").matches("4"))
+                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new UangFragment()).commit();
+                else
+                    Toast.makeText(this, "Anda bukan bendahara", Toast.LENGTH_SHORT).show();
                 closeDrawer();
                 break;
             case R.id.nav_logout:
