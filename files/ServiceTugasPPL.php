@@ -89,7 +89,8 @@
 				'code' => '1',
 				'id' => $hasil_user['id'],
 				'nama' => $hasil_user['nama'],
-				'id_ukm' => $hasil_user['id_ukm']
+				'id_ukm' => $hasil_user['id_ukm'],
+				'role' => $hasil_user['role']
 			];
 			
 		}else{
@@ -426,6 +427,25 @@
 				array_push($resultArray['list'], $tempArray);
 			}
             
+            echo json_encode($resultArray);
+            mysqli_close($connection);
+        }
+    }
+	
+	if($flag == "get_kas"){
+        $id_ukm = $_POST['id_ukm'];
+        $query_kas = "SELECT nim,nama, COUNT(nim) as jumlah FROM kas WHERE id_ukm = '".$id_ukm."' GROUP BY nim";
+        $kas = mysqli_query($connection,$query_kas);
+        if($kas){
+            $resultArray = array();
+            while($row = $kas->fetch_object()){
+				$tempArray = [
+					'nim' => $row->nim,
+					'nama' => $row->nama,
+					'jumlah' => $row->jumlah
+				];
+				array_push($resultArray, $tempArray);
+            }
             echo json_encode($resultArray);
             mysqli_close($connection);
         }
