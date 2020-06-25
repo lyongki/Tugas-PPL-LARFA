@@ -70,7 +70,7 @@ public class ListPembayaranKasFragment extends Fragment implements VerticalScrol
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
     private ArrayList<Kas> dataKas;
-    private String url = "http://192.168.43.47/ServiceTugasPPL.php";
+    private String url = "http://192.168.1.5/ServiceTugasPPL.php";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
