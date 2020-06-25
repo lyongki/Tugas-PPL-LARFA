@@ -1,7 +1,7 @@
 const express = require("express");
 const model = require("../models");
 const jwt = require("jsonwebtoken");
-var md5 = require('md5');
+var md5 = require("md5");
 
 const router = express.Router();
 const Op = model.Sequelize.Op;
@@ -13,7 +13,7 @@ router.post("/login", async function (req, res) {
       where: {
         [Op.and]: {
           username: req.body.username,
-          password: md5(req.body.username),
+          password: md5(req.body.password),
         },
       },
     });
@@ -45,7 +45,7 @@ router.post("/register", async function (req, res) {
   try {
     const newAccount = await model.pengguna.create({
       ...req.body,
-      password:md5(req.body)
+      password: md5(req.body.password),
     });
     res.json(newAccount);
   } catch (e) {
