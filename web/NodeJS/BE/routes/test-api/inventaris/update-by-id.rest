@@ -1,0 +1,7 @@
+PUT http://localhost:9000/inventaris/12 HTTP/1.1
+content-type: application/json
+
+{
+    "nama_event":"fery",
+    "deskripsi":"fery-des"
+}

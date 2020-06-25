@@ -1,0 +1,9 @@
+POST http://localhost:9000/inventaris/ HTTP/1.1
+content-type: application/json
+
+ {
+      "nama": "test tos",
+      "jumlah": 5,
+      "role": 1,
+      "jumlah_dipinjam": 10
+    }

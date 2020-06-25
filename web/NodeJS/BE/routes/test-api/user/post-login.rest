@@ -1,0 +1,8 @@
+POST http://localhost:9000/user/login HTTP/1.1
+content-type: application/json
+
+{
+    "username":"Agustina.Monahan33",
+    "password":"ZCBhPleemkcsq0_"
+}
+

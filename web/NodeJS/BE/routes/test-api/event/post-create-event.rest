@@ -1,0 +1,12 @@
+POST http://localhost:9000/event/ HTTP/1.1
+content-type: application/json
+Authorization:
+
+{
+    "nama_event":"test test",
+    "tanggal":"2020-06-04T17:08:31.717Z",
+    "thumbnail":"http://test",
+    "deskripsi":"tes test tes",
+    "nama_ukm":"tes tes test tes",
+    "evaluasi":"tes test tset tse tset"
+}
