@@ -1,0 +1,56 @@
+database ukmku
+
+#######tabel event
+-id event (int)
+-nama event (varchar)
+-thumbnail (varchar)
+-evaluasi (varchar)
+
+#######tabel pengguna
+-id (int)
+-nama (varchar)
+-username(varchar)
+-password(varchar)(MD5)
+-role(int)
+	0-user biasa
+	1-pengurus
+	2-seketaris
+	3-bendahara
+	4-ketua
+
+######tabel uang
+-id(int)
+-tanggal(date)
+-role(int)
+	0-masuk
+	1-keluar
+
+#######tabel kas
+-id(int)
+-nim(varchar)
+-nama(varchar)
+-tanggal(date)
+
+######tabel rapat
+-id(int)
+-tanggal(date)
+-nama(varchar)
+-hasil(varchar)
+
+######tabel inventaris
+-id(int)
+-nama(varchar)
+-jumlah(int)
+-role(int)
+ 	0-tidak dipinjam
+	1-dipinjam
+-jumlah_dipinjam(int)
+
+######tabel surat
+-id(int)
+-tanggal(date)
+-role(int)
+	0-masuk
+	1-keluar
+-nama (varchar)
+-file(varchar)
