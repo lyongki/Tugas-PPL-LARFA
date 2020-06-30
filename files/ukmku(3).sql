@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2020 at 12:23 PM
+-- Generation Time: Jun 30, 2020 at 09:39 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -72,15 +72,15 @@ CREATE TABLE `inventaris` (
 --
 
 INSERT INTO `inventaris` (`id`, `id_ukm`, `nama`, `jumlah`, `jumlah_dipinjam`) VALUES
-(1, 1, 'Printer', 1, 1),
-(2, 1, 'Kipas Angin', 2, 2),
-(3, 2, 'PC', 1, 0),
-(4, 1, 'Meja', 2, 0),
-(5, 2, 'Meja', 2, 2),
-(6, 2, 'Kursi', 2, 0),
-(7, 3, 'Kursi', 1, 0),
-(8, 3, 'Meja', 1, 0),
-(9, 3, 'Kipas Angin', 1, 0);
+(1, 1, 'Printer', 1, 0),
+(2, 1, 'PC', 1, 1),
+(3, 1, 'Kipas Angin', 2, 2),
+(4, 2, 'Lemari', 2, 0),
+(5, 2, 'Meja', 3, 1),
+(6, 2, 'Kursi', 4, 2),
+(7, 3, 'Monitor', 1, 0),
+(8, 3, 'Karpet', 2, 1),
+(9, 3, 'Kipas Angin', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -100,10 +100,15 @@ CREATE TABLE `inventaris_pinjam` (
 --
 
 INSERT INTO `inventaris_pinjam` (`id`, `id_pengurus`, `id_inventaris`, `jumlah`) VALUES
-(1, 2, 1, 1),
-(2, 2, 2, 1),
-(3, 3, 5, 2),
-(5, 2, 2, 1);
+(1, 1, 2, 1),
+(2, 3, 3, 1),
+(3, 4, 3, 1),
+(4, 6, 5, 1),
+(5, 5, 6, 1),
+(6, 7, 6, 1),
+(7, 9, 8, 1),
+(8, 12, 9, 2),
+(9, 10, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -126,14 +131,32 @@ CREATE TABLE `kas` (
 
 INSERT INTO `kas` (`id`, `id_ukm`, `id_uang`, `nim`, `nama`, `tanggal`) VALUES
 (1, 1, 1, 'A11.2017.10123', 'Abdul Sujono', '2020-02-24 23:49:00'),
-(2, 1, 2, 'A11.2017.10124', 'Wiro Sableng', '2020-02-24 23:49:00'),
-(3, 1, 4, 'A11.2017.10125', 'Ahmad Sujani', '2020-02-24 23:49:00'),
-(4, 2, 3, 'A11.2017.10190', 'Budi Sunono', '2020-02-24 23:49:00'),
-(5, 2, 5, 'A11.2017.10145', 'Abdul Miftah', '2020-02-24 23:49:00'),
-(6, 2, 6, 'A11.2017.10128', 'Dian Anisa', '2020-02-24 23:49:00'),
-(7, 3, 7, 'A11.2017.10143', 'Anya Geraldine', '2020-02-24 23:49:00'),
-(8, 3, 8, 'A11.2017.10100', 'Yayang Eka Pratiwi', '2020-02-24 23:49:00'),
-(9, 3, 9, 'A11.2017.10873', 'Fitri Ayu', '2020-02-24 23:49:00');
+(2, 1, 2, 'A11.2016.10456', 'Ahmad Dika', '2020-02-24 08:10:16'),
+(3, 1, 3, 'A11.2017.10125', 'Nisa Setiawati', '2020-02-24 23:49:00'),
+(4, 2, 4, 'A11.2017.10190', 'Fitri Ayu', '2020-02-25 10:29:00'),
+(5, 2, 5, 'A11.2017.10145', 'Budi Sunono', '2020-02-25 23:49:00'),
+(6, 2, 6, 'A11.2017.10128', 'Dian Anisa', '2020-02-25 17:49:00'),
+(7, 3, 7, 'A11.2017.10143', 'Satria Bagas', '2020-02-26 10:49:00'),
+(8, 3, 8, 'A11.2017.10100', 'Harald Junior', '2020-02-26 08:49:00'),
+(9, 3, 9, 'A11.2017.10873', 'Erga Novendra', '2020-02-26 06:49:00'),
+(10, 1, 10, 'A11.2017.10123', 'Abdul Sujono', '2020-03-24 23:49:00'),
+(11, 1, 11, 'A11.2016.10456', 'Ahmad Dika', '2020-03-24 08:10:16'),
+(12, 1, 12, 'A11.2017.10125', 'Nisa Setiawati', '2020-03-24 23:49:00'),
+(13, 2, 13, 'A11.2017.10190', 'Fitri Ayu', '2020-03-25 10:29:00'),
+(14, 2, 14, 'A11.2017.10145', 'Budi Sunono', '2020-03-25 23:49:00'),
+(15, 2, 15, 'A11.2017.10128', 'Dian Anisa', '2020-03-25 17:49:00'),
+(16, 3, 16, 'A11.2017.10143', 'Satria Bagas', '2020-03-26 10:49:00'),
+(17, 3, 17, 'A11.2017.10100', 'Harald Junior', '2020-03-26 08:49:00'),
+(18, 3, 18, 'A11.2017.10873', 'Erga Novendra', '2020-03-26 06:49:00'),
+(19, 1, 19, 'A11.2017.10123', 'Abdul Sujono', '2020-04-24 23:49:00'),
+(20, 1, 20, 'A11.2016.10456', 'Ahmad Dika', '2020-04-24 08:10:16'),
+(21, 1, 21, 'A11.2017.10125', 'Nisa Setiawati', '2020-04-24 23:49:00'),
+(22, 2, 22, 'A11.2017.10190', 'Fitri Ayu', '2020-04-25 10:29:00'),
+(23, 2, 23, 'A11.2017.10145', 'Budi Sunono', '2020-04-25 23:49:00'),
+(24, 2, 24, 'A11.2017.10128', 'Dian Anisa', '2020-04-25 17:49:00'),
+(25, 3, 25, 'A11.2017.10143', 'Satria Bagas', '2020-04-26 10:49:00'),
+(26, 3, 26, 'A11.2017.10100', 'Harald Junior', '2020-04-26 08:49:00'),
+(27, 3, 27, 'A11.2017.10873', 'Erga Novendra', '2020-04-26 06:49:00');
 
 -- --------------------------------------------------------
 
@@ -155,15 +178,18 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id`, `id_ukm`, `nama`, `username`, `password`, `role`) VALUES
-(1, 1, 'Abdul Sujono', 'sujono', 'sujono', 0),
-(2, 1, 'Wiro Sableng', 'wiro', 'wiro', 1),
-(3, 2, 'Ahmad Uwuwu', 'uwu', 'uwu', 2),
-(4, 2, 'Indah Setiawati', 'indah', 'indah', 3),
-(5, 1, 'Yayang Eka Pratiwi', 'yayang', 'yangsayang', 1),
-(6, 2, 'Fitri Ayu', 'yuayu', 'yuayu', 4),
-(7, 3, 'Budi Sunono', 'budbud', 'budbud', 0),
-(8, 3, 'Dian Anisa', 'dian', 'dian', 0),
-(9, 3, 'Anya Geraldine', 'anya', 'anya', 3);
+(1, 1, 'Abdul Sujono', 'sujono', 'sujono', 1),
+(2, 1, 'Ahmad Dika', 'dika', 'dika', 2),
+(3, 1, 'Nisa Setiawati', 'nisa', 'nisa', 3),
+(4, 1, 'Yayang Eka Pratiwi', 'yayang', 'yangsayang', 4),
+(5, 2, 'Fitri Ayu', 'yuayu', 'yuayu', 1),
+(6, 2, 'Budi Sunono', 'budbud', 'budbud', 2),
+(7, 2, 'Dian Anisa', 'dian', 'dian', 3),
+(8, 2, 'Anya Geraldine', 'anya', 'anya', 4),
+(9, 3, 'Satria Bagas', 'satgas', 'satgas', 1),
+(10, 3, 'Harald Junior', 'harald', 'harald', 2),
+(11, 3, 'Erga Novendra', 'erga', 'erga', 3),
+(12, 3, 'Fano Bastian', 'fano', 'fano', 4);
 
 -- --------------------------------------------------------
 
@@ -244,15 +270,48 @@ CREATE TABLE `uang` (
 --
 
 INSERT INTO `uang` (`id`, `id_ukm`, `tanggal`, `jumlah`, `role`, `keterangan`) VALUES
-(1, 1, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(2, 1, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(3, 2, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(4, 1, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(5, 2, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(6, 2, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(7, 3, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(8, 3, '2020-06-18 23:49:00', 5000, 0, 'uang kas'),
-(9, 3, '2020-06-18 23:49:00', 5000, 0, 'uang kas');
+(1, 1, '2020-02-24 23:49:00', 5000, 0, 'uang kas'),
+(2, 1, '2020-02-24 08:10:16', 5000, 0, 'uang kas'),
+(3, 1, '2020-02-24 23:49:00', 5000, 0, 'uang kas'),
+(4, 2, '2020-02-25 10:29:00', 10000, 0, 'uang kas'),
+(5, 2, '2020-02-25 23:49:00', 10000, 0, 'uang kas'),
+(6, 2, '2020-02-25 17:49:00', 10000, 0, 'uang kas'),
+(7, 3, '2020-02-26 10:49:00', 8000, 0, 'uang kas'),
+(8, 3, '2020-02-26 08:49:00', 8000, 0, 'uang kas'),
+(9, 3, '2020-02-26 06:49:00', 8000, 0, 'uang kas'),
+(10, 1, '2020-03-24 23:49:00', 5000, 0, 'uang kas'),
+(11, 1, '2020-03-24 08:10:16', 5000, 0, 'uang kas'),
+(12, 1, '2020-03-24 23:49:00', 5000, 0, 'uang kas'),
+(13, 2, '2020-03-25 10:29:00', 10000, 0, 'uang kas'),
+(14, 2, '2020-03-25 23:49:00', 10000, 0, 'uang kas'),
+(15, 2, '2020-03-25 17:49:00', 10000, 0, 'uang kas'),
+(16, 3, '2020-03-26 10:49:00', 8000, 0, 'uang kas'),
+(17, 3, '2020-03-26 08:49:00', 8000, 0, 'uang kas'),
+(18, 3, '2020-03-26 06:49:00', 8000, 0, 'uang kas'),
+(19, 1, '2020-04-24 23:49:00', 5000, 0, 'uang kas'),
+(20, 1, '2020-04-24 08:10:16', 5000, 0, 'uang kas'),
+(21, 1, '2020-04-24 23:49:00', 5000, 0, 'uang kas'),
+(22, 2, '2020-04-25 10:29:00', 10000, 0, 'uang kas'),
+(23, 2, '2020-04-25 23:49:00', 10000, 0, 'uang kas'),
+(24, 2, '2020-04-25 17:49:00', 10000, 0, 'uang kas'),
+(25, 3, '2020-04-26 10:49:00', 8000, 0, 'uang kas'),
+(26, 3, '2020-04-26 08:49:00', 8000, 0, 'uang kas'),
+(27, 3, '2020-04-26 06:49:00', 8000, 0, 'uang kas'),
+(28, 1, '2020-04-30 13:20:00', 250000, 0, 'Laba Pembuatan Seragam PDH'),
+(29, 1, '2020-05-30 13:20:00', 1000000, 0, 'Sponsor'),
+(30, 2, '2020-05-01 15:20:00', 300000, 0, 'Laba Pembuatan Seragam PDH'),
+(31, 2, '2020-06-01 15:20:00', 500000, 0, 'Sponsor'),
+(32, 3, '2020-05-02 15:20:00', 120000, 0, 'Laba Pembuatan Seragam PDH'),
+(33, 3, '2020-06-02 15:20:00', 1200000, 0, 'Sponsor'),
+(34, 1, '2020-05-31 13:20:00', 1000000, 1, 'Sumbangan Bencana'),
+(35, 1, '2020-06-01 07:20:00', 100000, 1, 'Perbaikan inventaris (kipas angin)'),
+(36, 1, '2020-06-03 07:20:00', 50000, 1, 'Cetak poster'),
+(37, 2, '2020-06-10 15:20:00', 200000, 1, 'Sumbangan Bencana'),
+(38, 2, '2020-06-11 15:20:00', 80000, 1, 'Perbaikan inventaris (printer)'),
+(39, 2, '2020-06-12 15:20:00', 150000, 1, 'Pembuatan x-banner'),
+(40, 3, '2020-06-28 15:20:00', 200000, 1, 'Pembuatan roll banner'),
+(41, 3, '2020-06-29 15:20:00', 90000, 1, 'Pembelian tinta printer'),
+(42, 3, '2020-06-29 08:20:00', 250000, 1, 'Pembelian lemari');
 
 -- --------------------------------------------------------
 
@@ -352,19 +411,19 @@ ALTER TABLE `inventaris`
 -- AUTO_INCREMENT for table `inventaris_pinjam`
 --
 ALTER TABLE `inventaris_pinjam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kas`
 --
 ALTER TABLE `kas`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `rapat`
@@ -382,7 +441,7 @@ ALTER TABLE `surat`
 -- AUTO_INCREMENT for table `uang`
 --
 ALTER TABLE `uang`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `ukm`

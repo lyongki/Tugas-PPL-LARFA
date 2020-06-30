@@ -48,7 +48,7 @@ public class UangFragment extends Fragment {
     private SharedPreferences preferences;
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
-    private String url = "http://192.168.1.5/ServiceTugasPPL.php";
+    private String url = "http://192.168.43.47/ServiceTugasPPL.php";
     private String nilaiSaldo,tipe,code,mNim,mNama,mJumlah,mKeterangan;;
     private Spinner spinner;
     private ArrayAdapter arrayAdapter;

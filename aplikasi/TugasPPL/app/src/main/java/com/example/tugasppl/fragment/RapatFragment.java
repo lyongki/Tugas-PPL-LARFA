@@ -50,7 +50,7 @@ public class RapatFragment extends Fragment {
     private StringRequest stringRequest;
     private ArrayList<Rapat> dataRapat;
     private SharedPreferences preferences;
-    private String url = "http://192.168.1.5/ServiceTugasPPL.php";
+    private String url = "http://192.168.43.47/ServiceTugasPPL.php";
     private Button search;
     private EditText namaSearch;
 
