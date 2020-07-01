@@ -14,7 +14,6 @@
         <ImageView
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:layout_weight="1"
             android:id="@+id/imageViewHomeThumbnail"
             android:src="@mipmap/ic_launcher"/>
         <LinearLayout
@@ -26,6 +25,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
                 android:id="@+id/textViewHomeNamaEvent"
                 android:layout_weight="2"
                 android:text="nama event"
@@ -35,6 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="12dp"
                 android:id="@+id/textViewHomeNamaUkm"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:text="nama ukm"/>
@@ -43,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="12dp"
                 android:id="@+id/textViewHomeTanggal"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:text="tanggal"/>
