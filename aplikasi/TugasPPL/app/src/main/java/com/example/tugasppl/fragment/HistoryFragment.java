@@ -46,7 +46,7 @@ public class HistoryFragment extends Fragment {
     private HistoryAdapter historyAdapter;
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
-    private String url = "http://192.168.1.5/ServiceTugasPPL.php";
+    private String url = "http://192.168.1.4/ServiceTugasPPL.php";
     private ArrayList<History> dataHistory;
 
 
