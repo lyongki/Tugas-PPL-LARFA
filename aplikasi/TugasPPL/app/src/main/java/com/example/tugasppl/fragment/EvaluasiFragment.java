@@ -47,7 +47,7 @@ public class EvaluasiFragment extends Fragment {
     private ArrayList<Event> dataEvent;
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
-    private String url = "http://192.168.1.4/ServiceTugasPPL.php";
+    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
     private SharedPreferences preferences;
     private EmptyAdapter emptyAdapter;
     private EvaluasiAdapter evaluasiAdapter;

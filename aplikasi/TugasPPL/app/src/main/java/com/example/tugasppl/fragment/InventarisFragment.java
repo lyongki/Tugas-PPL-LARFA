@@ -52,7 +52,7 @@ public class InventarisFragment extends Fragment {
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
     private FloatingActionButton fab;
-    private String url = "http://192.168.1.4/ServiceTugasPPL.php";
+    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

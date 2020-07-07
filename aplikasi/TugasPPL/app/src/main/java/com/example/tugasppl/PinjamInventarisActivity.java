@@ -41,7 +41,7 @@ public class PinjamInventarisActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
     private ArrayList<Inventaris> dataInventaris;
-    private String url = "http://192.168.1.4/ServiceTugasPPL.php";
+    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
     private SharedPreferences preferences;
     private ArrayList<String> namaInventaris;
     private String id_inventaris;
