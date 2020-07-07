@@ -43,7 +43,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tanggal, jumlah, keterangan;
+        private TextView tanggal, jumlah, keterangan,tipe;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,12 +55,17 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             tanggal = itemView.findViewById(R.id.textViewHistoryTanggal);
             jumlah = itemView.findViewById(R.id.textViewHistoryJumlah);
             keterangan = itemView.findViewById(R.id.textViewHistoryKeterangan);
+            tipe = itemView.findViewById(R.id.textViewHistoryTipe);
         }
 
         public void bindTo(History current) {
             tanggal.setText(current.getTanggal());
             keterangan.setText(current.getKeterangan());
             jumlah.setText(current.getJumlah());
+            if(current.getRole().matches("1"))
+                tipe.setText("Uang Keluar  :");
+            else
+                tipe.setText("Uang Masuk  :");
         }
     }
 }

@@ -46,7 +46,7 @@ public class HistoryFragment extends Fragment {
     private HistoryAdapter historyAdapter;
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
-    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
+    private String url = "https://lyongkitan.000webhostapp.com/ServiceTugasPPL.php";
     private ArrayList<History> dataHistory;
 
 
@@ -73,7 +73,8 @@ public class HistoryFragment extends Fragment {
                     if (jsonArray.length() > 0){
                         for(int i = 0 ;i < jsonArray.length();i++){
                             JSONObject list = jsonArray.getJSONObject(i);
-                            History history = new History(list.getString("tanggal"), list.getString("jumlah"), list.getString("keterangan"));
+                            History history = new History(list.getString("tanggal"), list.getString("jumlah"),
+                                    list.getString("keterangan"), list.getString("role"));
                             dataHistory.add(history);
                         }
                         recyclerView.setAdapter(historyAdapter);

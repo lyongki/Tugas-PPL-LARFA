@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText username,password;
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
-    private  String url = "http://192.168.2.254/ServiceTugasPPL.php";
+    private  String url = "https://lyongkitan.000webhostapp.com/ServiceTugasPPL.php";
     private SharedPreferences preferences;
 
     @Override

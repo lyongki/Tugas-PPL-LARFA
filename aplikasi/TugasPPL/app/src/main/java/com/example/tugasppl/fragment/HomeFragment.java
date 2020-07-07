@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
     private ArrayList<Event> dataEvent;
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
-    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
+    private String url = "https://lyongkitan.000webhostapp.com/ServiceTugasPPL.php";
     private HomeAdapter homeAdapter;
 
     public HomeFragment() {

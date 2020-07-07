@@ -52,7 +52,7 @@ public class SuratFragment extends Fragment {
     private SuratAdapter suratAdapter;
     private EmptyAdapter emptyAdapter;
     private RecyclerView recyclerView;
-    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
+    private String url = "https://lyongkitan.000webhostapp.com/ServiceTugasPPL.php";
     private SharedPreferences preferences;
     private EditText namaSearch;
 

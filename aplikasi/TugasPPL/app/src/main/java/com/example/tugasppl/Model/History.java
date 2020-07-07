@@ -1,12 +1,21 @@
 package com.example.tugasppl.Model;
 
 public class History {
-    private String tanggal,jumlah, keterangan;
+    private String tanggal,jumlah, keterangan,role;
 
-    public History(String tanggal, String jumlah, String keterangan) {
+    public History(String tanggal, String jumlah, String keterangan, String role) {
         this.tanggal = tanggal;
         this.jumlah = jumlah;
         this.keterangan = keterangan;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getTanggal() {

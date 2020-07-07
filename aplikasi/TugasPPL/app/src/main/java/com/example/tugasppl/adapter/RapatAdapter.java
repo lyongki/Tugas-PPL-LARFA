@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tugasppl.DetailEventActivity;
+import com.example.tugasppl.DetailRapatActivity;
 import com.example.tugasppl.Model.Rapat;
 import com.example.tugasppl.R;
 
@@ -56,7 +57,7 @@ public class RapatAdapter extends RecyclerView.Adapter<RapatAdapter.ViewHolder> 
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, DetailEventActivity.class);
+                    Intent intent = new Intent(context, DetailRapatActivity.class);
                     intent.putExtra("DATA",dataRapat.get(getAdapterPosition()));
                     context.startActivity(intent);
                 }

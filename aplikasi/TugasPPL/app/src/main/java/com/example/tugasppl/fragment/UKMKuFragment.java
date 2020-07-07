@@ -44,7 +44,7 @@ public class UKMKuFragment extends Fragment {
     private UKMKuAdapter ukmKuAdapter;
     private StringRequest stringRequest;
     private RequestQueue requestQueue;
-    private String url = "http://192.168.2.254/ServiceTugasPPL.php";
+    private String url = "https://lyongkitan.000webhostapp.com/ServiceTugasPPL.php";
 
     public UKMKuFragment() {
         // Required empty public constructor
