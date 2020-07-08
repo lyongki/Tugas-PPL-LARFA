@@ -1,1 +1,283 @@
-t
+ 
+
+
+A11.SC.4604 – Proyek Perangkat Lunak
+
+
+Software Design Document
+UKM-Ku
+Versi 1.0
+
+
+Dibuat oleh :
+
+TIM LARFA
+
+A11.2017.10255 -Lyongky Suryono T - Android developer
+A11.2017.10190 -	 Fery Eka Saputra - Web developer
+A11.2017.10567 - Muhammad Arvin - Backend developer & SDD
+A11.2017.10510 - Alvin Faiz Kurniawan - Designer aplikasi & SDD
+
+
+Teknik Informatika - S1
+Fakultas Ilmu Komputer
+Universitas Dian Nuswantoro
+
+
+
+
+Daftar Isi
+
+1.	Introduction	3
+a.	Title of Project	3
+b.	Target Audience	3
+c.	Team Member & Roles	3
+d.	Version Control History	3
+e.	Purpose & Scope	3
+f.	Reference Materials	3
+g.	System Overview	3
+2.	Detailed Description	4
+a.	Use Case Diagram	4
+b.	Complete Package Diagram	4
+c.	Per-module Detailed Description	5
+I.	Modul Home	5
+II.	Modul Pengguna	6
+III.	Modul Fitur	8
+3.	Data Design	12
+a.	ERD (Entity Relationship Diagram)	12
+b.	Detailed Tables	12
+4.	User Interface Design	14
+a.	Overview	14
+I.	Aplikasi Android	14
+II.	Web Admin	15
+b.	Pre-screen Detail	15
+I.	Aplikasi Android	15
+II.	Web Admin	20
+5.	Team Progress	23
+a.	Gantt Chart	23
+b.	Version Control	24
+c.	Team Management	25
+ 
+1.	Introduction
+a.	Title of Project
+UKM-Ku
+
+b.	Target Audience
+-	Ketua UKM, sebagai super admin.
+-	Pengurus UKM, sebagai admin.
+-	Anggota atau umum, sebagai pengguna.
+
+c.	Team Member & Roles
+1)	Lyongky Suryono T sebagai developer aplikasi android
+2)	Fery Eka Saputra, sebagai developer web admin
+3)	Muhammad Arvin, sebagai developer backend dan perancang SDD
+4)	Alvin Faiz Kurniawan – sebagai designer aplikasi dan perancang SDD
+
+d.	Version Control History
+
+
+e.	Purpose & Scope
+Selama ini beberapa UKM di Universitas Dian Nuswantoro masih melakukan pencatatan atau pengarsipan secara manual sehingga ada kemungkinan datanya akan hilang. Maka dengan adanya aplikasi UKM-Ku akan memudahkan pengurus dalam mengelola data dan mengurangi kemungkinan data yang telah disimpan hilang.
+
+f.	Reference Materials
+[1] Muhammad Dedi Irawan, Implementasi E-Arsip Pada Program Studi Teknik Informatika. Jurnal Teknologi Informasi Vol.2, No.1. Juni 2018
+
+g.	System Overview
+UKM-Ku merupakan sebuah sistem notulen yang dapat digunakan oleh organisasi atau Unit Kegiatan Mahasiswa (UKM) di Universitas Dian Nuswantoro. Dalam sistem ini pengurus UKM dapat melakuka menyimpan dokumen atau surat, pencatatn keuangan, jadwal event dan inventaris. Selain itu, anggota atau umum juga dapat melihat event apa saja yang ada di UKM tersebut, sehingga aplikasi UKM-Ku juga berguna untuk promosi event dari sebuah UKM di Universitas Dian Nuswantoro.
+ 
+2.	Detailed Description
+a.	Use Case Diagram
+ 
+
+b.	Complete Package Diagram
+ 
+ 
+
+c.	Per-module Detailed Description
+I.	Modul Home
+1)	Class Diagram
+ 
+
+2)	Sequence Diagram
+ 
+ 
+
+II.	Modul Pengguna
+1)	Class Diagram
+ 
+
+ 
+
+ 
+
+2)	Sequence Diagram
+ 
+
+ 
+ 
+
+
+III.	Modul Fitur
+1)	Class Diagram
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+2)	Sequence Diagram
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+3.	Data Design
+a.	ERD (Entity Relationship Diagram)
+ 
+
+b.	Detailed Tables
+Pengurus
+username	varchar (12)
+pass	varchar (16)
+Tabel Pengurus 
+	
+
+Keuangan
+kode	int (3)
+tgl	date
+uangmsk	integer	
+uangkl	integer
+saldo	integer
+Tabel Keuangan 
+
+
+
+
+
+
+
+
+Inventaris
+kode	int (3)
+namabrg	varchar (20)
+kondisi	varchar (10)	
+jumlah	int (3)
+Tabel Inventaris 
+
+
+
+
+
+Event
+idevent	int (3)
+tgl	date
+desevent	varchar (255)	
+Tabel Event
+
+
+
+
+Akun
+nama	varchar (30)
+nim	varchar (14)
+username	varchar (12)
+pass	varchar (16)
+Tabel Akun
+
+
+
+
+
+ 
+
+4.	User Interface Design
+a.	Overview
+I.	Aplikasi Android
+ 
+ 
+II.	Web Admin
+ 
+
+b.	Pre-screen Detail
+I.	Aplikasi Android
+i.	Screen 1 : Main menu
+ 
+Home Event : Menampilkan semua event dari semua ukm
+UKM Ku : Menampilkan daftar ukm untuk memilih event yang akan dilihat sesuai ukm tertentu
+
+ii.	Screen 2 : Halaman login
+
+ 
+Menampilkan halaman login untuk pengurus sehingga dapat mengakses fitur-fitur selanjutnya
+
+iii.	Screen 3 : Menu utama
+ 
+Memuat menu utama yang berisikan informasi seperti keuangan (saldo, daftar pembayaran kas, uang masuk dan keluar) dan sekretaris (hasil rapat, evaluasi event, surat masuk dan keluar, inventaris)
+ 
+
+iv.	Screen 4 : Keuangan
+ 
+Saldo : menampilkan histori uang masuk dan uang keluar dan saldo untuk saat ini. 
+
+ 
+Daftar Pembayaran Kas : menampilkan daftar pembayaran kas dalam satu semester
+
+ 
+Uang Masuk dan Keluar : melakukan input uang masuk dan uang keluar
+
+v.	Screen 5 : Sekretaris
+
+ 
+Hasil rapat : menampilkan hasil rapat
+ 
+Evaluasi event : menampilkan hasil evaluasi event
+ 
+Surat Masuk dan Keluar : menampilkan surat masuk dan surat keluar
+ 
+Inventaris : menampilkan informasi inventaris dan tersedia fitur peminjaman untuk mencatat peminjaman inventaris
+II.	Web Admin
+i.	Tampilan untuk log history transaksi
+ 
+ 
+ii.	Tampilan untuk input keuangan
+ 
+ 
+
+iii.	Tampilan untuk input hasil evaluasi
+ 
+
+iv.	Tampilan untuk input hasil evaluasi rapat
+ 
+
+v.	Tampilan untuk input inventaris
+ 
+ 
+vi.	Tampilan untuk input surat
+ 
+
+
+
+5.	Team Progress
+a.	Gantt Chart
+ 
+ 
+
+b.	Version Control
+ 
+
+ 
+ 
+
+c.	Team Management
+ 
+
+ 
+
+
