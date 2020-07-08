@@ -55,5 +55,61 @@ router.post("/register", async function (req, res) {
     });
   }
 });
+router.get("/", async function (req, res) {
+  try {
+    const pengguna = await model.pengguna.findAll();
+    res.json({ data: pengguna });
+  } catch (error) {
+    res.status(404);
+    res.json({
+      message: error,
+    });
+  }
+});
+router.get("/:id", async function (req, res) {
+  try {
+    const pengguna = await model.pengguna.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.json({ data: pengguna });
+  } catch (error) {
+    res.status(404);
+    res.json({
+      message: error,
+    });
+  }
+});
+router.delete("/:id", async function (req, res) {
+  try {
+    const pengguna = await model.pengguna.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.json({ data: pengguna });
+  } catch (error) {
+    res.status(404);
+    res.json({
+      message: error,
+    });
+  }
+});
+router.put("/:id", async function (req, res) {
+  try {
+    const pengguna = await model.pengguna.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.json({ data: pengguna[0] });
+  } catch (error) {
+    res.status(404);
+    res.json({
+      message: error,
+    });
+  }
+});
 
 module.exports = router;
